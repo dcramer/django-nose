@@ -14,3 +14,16 @@ class ResultPlugin(object):
 
     def finalize(self, result):
         self.result = result
+
+class DjangoPlugin(object):
+    name = "django"
+    enabled = True
+
+    def __init__(self, runner):
+         self.runner = runner
+
+    def prepareTest(self, test):
+         self.old_names = self.runner.setup_databases()
+
+    def finalize(self, result):
+        self.runner.teardown_databases(self.old_names)
