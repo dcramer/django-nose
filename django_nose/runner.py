@@ -16,7 +16,7 @@ from django.test.simple import DjangoTestSuiteRunner
 
 import nose.core
 
-from django_nose.plugin import ResultPlugin
+from django_nose.plugin import ResultPlugin, DjangoPlugin
 
 try:
     any
