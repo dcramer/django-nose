@@ -3,14 +3,14 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-nose',
-    version='0.1',
+    version='0.1.1',
     description='Django test runner that uses nose.',
     long_description=open('README.rst').read(),
     author='Jeff Balogh',
     author_email='me@jeffbalogh.org',
     url='http://github.com/jbalogh/django-nose',
     license='BSD',
-    packages=find_packages(),
+    packages=find_packages(exclude=['testapp','testapp/*']),
     include_package_data=True,
     zip_safe=False,
     install_requires=['nose'],
