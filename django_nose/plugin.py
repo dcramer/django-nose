@@ -22,7 +22,7 @@ class DjangoPlugin(object):
     def __init__(self, runner):
         self.runner = runner
 
-    def prepareTestResult(self, test):
+    def prepareTest(self, test):
         self.old_names = self.runner.setup_databases()
 
     def finalize(self, result):
